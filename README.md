@@ -6,7 +6,7 @@ This should work on most other versions of Mac OS X as well.
 
 For more information about the original shellshock vulnerability, see [CVE-2014-6271](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271).
 
-Note that this does (yet) not fix the follow-up vulnerability described in  [CVE-2014-7169](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169).
+Note that this does not (yet) fix the follow-up vulnerability described in  [CVE-2014-7169](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169).
 
 I am waiting for the proposed patches for CVE-2014-7169 to pass review.  Those patches are 
 [Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).
