@@ -8,6 +8,8 @@ For more information about the original shellshock vulnerability, see [CVE-2014-
 
 Note that this does not (yet) fix the follow-up vulnerability described in  [CVE-2014-7169](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169).
 
+For completeness, there is additional information about the vulnerability in [US-CERT Alert TA14-268A](https://www.us-cert.gov/ncas/alerts/TA14-268A) and [CERT Vulnerability Note VU#252743](http://www.kb.cert.org/vuls/id/252743).
+
 I am waiting for the proposed patches for CVE-2014-7169 to pass review.  Those patches are 
 [Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).
 
