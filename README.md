@@ -1,7 +1,8 @@
 Shellshock hotfix for Mac OS X 10.9 Mavericks
 =============================================
 
-Apple Mac OS X 10.9 Mavericks bash-92 with 3.2.52 patch applied (shellshock fix)
+This is the Apple Mac OS X 10.9 Mavericks bash-92 with 3.2.52 patch applied (shellshock fix).
+This should work on most other versions of Mac OS X as well.
 
 For more information about the original shellshock vulnerability, see:
 http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271
@@ -9,7 +10,12 @@ http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271
 Note that this does (yet) not fix the follow-up CVE-2014-7169 vulnerability, see:
 http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169
 
-All I've done is apply the 3.2.52 patch to bash-92 from Apple.  Specifically:
+So far, all this does is apply the 3.2.52 patch to bash-92 from Apple.  I will update this repository when a fix for CVE-2014-7169 is released as well, pull requests are welcome.  Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
+
+Prerequisites
+=============
+
+To build using the steps below, you'll need Xcode.
 
 Usage
 =====
@@ -29,7 +35,7 @@ You should see the following output:
 Don't trust me?
 ===============
 
-If you want to do it yourself/not from this Git repository:
+If you want to do it yourself/not from this Git repository, you could wait for Apple to release a software update, or:
 
 1.  Download the Mac OS X bash source from Apple here:
 
@@ -56,3 +62,7 @@ If you want to do it yourself/not from this Git repository:
     ``sudo mv build/Release/{bash,sh} /bin/``
 
 
+Contribute
+==========
+
+Please feel free to submit pull requests.
