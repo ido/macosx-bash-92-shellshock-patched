@@ -10,7 +10,12 @@ http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271
 Note that this does (yet) not fix the follow-up CVE-2014-7169 vulnerability, see:
 http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169
 
+I am waiting for the proposed patch for CVE-2014-7169 as well by the maintainer of Bash (Chet Ramsey) to pass code review.  That patch is currently located here:
+http://www.openwall.com/lists/oss-security/2014/09/25/10
+
+
 So far, all this does is apply the 3.2.52 patch to bash-92 from Apple.  I will update this repository when a fix for CVE-2014-7169 is released as well, pull requests are welcome.  Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
+
 
 Prerequisites
 =============
