@@ -17,12 +17,12 @@ So far, all this does is apply the 3.2.52 patch to bash-92 from Apple.  I will u
 
 
 Prerequisites
-=============
+-------------
 
 To build using the steps below, you'll need Xcode.
 
 Usage
-=====
+-----
 
 You have four options, in descending order of how much you trust me (and increasing order of work):
 
@@ -32,7 +32,7 @@ You have four options, in descending order of how much you trust me (and increas
 *   Option 4: Wait for Apple to release an official software update.
 
 Option 1: Use my PGP-signed binaries.
-=====================================
+-------------------------------------
 
 Do you trust me not to root your box?  If so:
 
@@ -46,7 +46,7 @@ GNU bash, version 3.2.52(1)-release (x86_64-apple-darwin13)
 ```
 
 Option 2: Build the patched binaries from this repository.
-==========================================================
+----------------------------------------------------------
 ```
   git clone https://github.com/ido/macosx-bash-92-shellshock-patched bash-92
   cd bash-92
@@ -91,18 +91,18 @@ If you want to do it yourself/not from this Git repository, you could wait for A
     ``sudo mv build/Release/{bash,sh} /bin/``
 
 Option 4: Wait for Apple to release an official software update.
-================================================================
+----------------------------------------------------------------
 
 You should apply Apple's software updates when they're released regardless of whether you apply this fix.
 
 
 Contribute
-==========
+----------
 
 Please feel free to submit pull requests.
 
 Disclaimer
-==========
+----------
 
 ```
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
