@@ -24,6 +24,29 @@ To build using the steps below, you'll need Xcode.
 Usage
 =====
 
+You have four options, in descending order of how much you trust me (and increasing order of work):
+
+*   Option 1: Use the PGP signed binaries in the latest GitHub release of this repository.
+*   Option 2: Build the binaries from the patched source provided in this repository.
+*   Option 3: Reproduce the work I have done in this repository from upstream sources.
+*   Option 4: Wait for Apple to release an official software update.
+
+Option 1: Use my PGP-signed binaries.
+=====================================
+
+Do you trust me not to root your box?  If so:
+
+1. Go to https://github.com/ido/macosx-bash-92-shellshock-patched/releases/
+2. Once there, download the binaries (`bash` and `sh`) and the PGP signatures (`bash.asc` and `sh.asc`) in the release.
+3. Verify the PGP signatures with `gpg --verify bash.asc` and `gpg --verify sh.asc`
+4. Move the binaries into place with `sudo mv bash sh /bin/`
+5. Verify that it worked with `bash --version`.  You should see the following output:
+```
+GNU bash, version 3.2.52(1)-release (x86_64-apple-darwin13)
+```
+
+Option 2: Build the patched binaries from this repository.
+==========================================================
 ```
   git clone https://github.com/ido/macosx-bash-92-shellshock-patched bash-92
   cd bash-92
@@ -31,15 +54,15 @@ Usage
   sudo mv build/Release/{bash,sh} /bin/
   bash --version
 ```
-
 You should see the following output:
-
 ```
 GNU bash, version 3.2.52(1)-release (x86_64-apple-darwin13)
 ```
 
-Don't trust me?
-===============
+Option 3: Don't trust me.
+=========================
+
+Steps to reproduce my work from upstream...
 
 If you want to do it yourself/not from this Git repository, you could wait for Apple to release a software update, or:
 
@@ -67,8 +90,26 @@ If you want to do it yourself/not from this Git repository, you could wait for A
 
     ``sudo mv build/Release/{bash,sh} /bin/``
 
+Option 4: Wait for Apple to release an official software update.
+================================================================
+
+You should apply Apple's software updates when they're released regardless of whether you apply this fix.
+
 
 Contribute
 ==========
 
 Please feel free to submit pull requests.
+
+Disclaimer
+==========
+
+```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
