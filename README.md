@@ -4,14 +4,12 @@ Shellshock hotfix for Mac OS X 10.9 Mavericks
 This is the Apple Mac OS X 10.9 Mavericks bash-92 with 3.2.52 patch applied (shellshock fix).
 This should work on most other versions of Mac OS X as well.
 
-For more information about the original shellshock vulnerability, see:
-http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271
+For more information about the original shellshock vulnerability, see [CVE-2014-6271](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271).
 
-Note that this does (yet) not fix the follow-up CVE-2014-7169 vulnerability, see:
-http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169
+Note that this does (yet) not fix the follow-up vulnerability described in  [CVE-2014-7169](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169).
 
-I am waiting for the proposed patch for CVE-2014-7169 as well by the maintainer of Bash (Chet Ramsey) to pass review.  That patch is currently located here:
-http://www.openwall.com/lists/oss-security/2014/09/25/10
+I am waiting for the proposed patches for CVE-2014-7169 to pass review.  Those patches are 
+[Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).
 
 So far, all this does is apply the 3.2.52 patch to bash-92 from Apple.  I will update this repository when a fix for CVE-2014-7169 is released as well, pull requests are welcome.  Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
 
