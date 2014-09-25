@@ -13,12 +13,6 @@ I am waiting for the proposed patches for CVE-2014-7169 to pass review.  Those p
 
 So far, all this does is apply the 3.2.52 patch to bash-92 from Apple.  I will update this repository when a fix for CVE-2014-7169 is released as well, pull requests are welcome.  Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
 
-
-Prerequisites
--------------
-
-To build using the steps below, you'll need Xcode.
-
 Usage
 -----
 
@@ -45,6 +39,9 @@ GNU bash, version 3.2.52(1)-release (x86_64-apple-darwin13)
 
 Option 2: Build the patched binaries from this repository.
 ----------------------------------------------------------
+
+You'll need Xcode for this.
+
 ```
   git clone https://github.com/ido/macosx-bash-92-shellshock-patched bash-92
   cd bash-92
@@ -57,10 +54,12 @@ You should see the following output:
 GNU bash, version 3.2.52(1)-release (x86_64-apple-darwin13)
 ```
 
-Option 3: Don't trust me.
-=========================
+Option 3: Don't trust me, trust upstream instead.
+=================================================
 
 Steps to reproduce my work from upstream...
+
+You'll need Xcode for this.
 
 If you want to do it yourself/not from this Git repository, you could wait for Apple to release a software update, or:
 
