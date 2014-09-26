@@ -1,22 +1,16 @@
 Shellshock hotfix for Mac OS X 10.9 Mavericks
 =============================================
 
-This is the Apple Mac OS X 10.9 Mavericks bash-92 with 3.2.52 patch applied (shellshock fix).
+This is the Apple Mac OS X 10.9 Mavericks bash-92 with 3.2.52 and 3.2.53 patches applied (shellshock patches).
 This should work on most other versions of Mac OS X as well.
 
-For more information about the original shellshock vulnerability, see [CVE-2014-6271](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271).
-
-Note that this does not (yet) fix the follow-up vulnerability described in  [CVE-2014-7169](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169).
+For more information about the original shellshock vulnerability, see [CVE-2014-6271](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271) and the follow-up vulnerability described in [CVE-2014-7169](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169).  *This fixes both vulnerabilities.*
 
 For completeness, there is additional information about the vulnerability in [US-CERT Alert TA14-268A](https://www.us-cert.gov/ncas/alerts/TA14-268A) and [CERT Vulnerability Note VU#252743](http://www.kb.cert.org/vuls/id/252743).
 
-I am waiting for the proposed patches for CVE-2014-7169 to pass review.  Those patches are 
-[Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).
+There were two proposed patches to CVE-2014-7169: [Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).  Chet Ramey released bash 3.2.53 in a mailing list post [here](http://seclists.org/oss-sec/2014/q3/734), which was applied to this repository.
 
-I am in the process of applying the patches here: http://seclists.org/oss-sec/2014/q3/734
-
-So far, all this does is apply the 3.2.52 patch to bash-92 from Apple.  I will update this repository when a fix for CVE-2014-7169 is released as well, pull requests are welcome.  Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
-
+Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
 
 Usage
 -----
@@ -39,7 +33,7 @@ Do you trust me not to root your box?  If so:
 4. Move the binaries into place with `sudo mv bash sh /bin/`
 5. Verify that it worked with `bash --version`.  You should see the following output:
 ```
-GNU bash, version 3.2.52(1)-release (x86_64-apple-darwin13)
+GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)
 ```
 
 Option 2: Build the patched binaries from this repository.
@@ -56,7 +50,7 @@ You'll need Xcode for this.
 ```
 You should see the following output:
 ```
-GNU bash, version 3.2.52(1)-release (x86_64-apple-darwin13)
+GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)
 ```
 
 Option 3: Don't trust me, trust upstream instead.
@@ -72,25 +66,39 @@ If you want to do it yourself/not from this Git repository, you could wait for A
 
     http://opensource.apple.com/tarballs/bash/bash-92.tar.gz
 
-2.  Then, download the patch from here:
+2.  Then, download the patches from here:
 
     http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-052
+    http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-053
+    (or http://seclists.org/oss-sec/2014/q3/734 for bash32-053)
 
-3.  Then, verify the PGP signature with this file:
+3.  Then, verify the PGP signature with these files:
 
     http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-052.sig
+    http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-053.sig
 
 4.  Then, apply the patch to the bash-3.2 folder in the tarball:
 
-    ``tar xvzf bash-92.tar.gz && cd bash-92/bash-3.2 && patch -p1 < ../../bash32-052 && cd ../..``
+```
+tar xvzf bash-92.tar.gz 
+cd bash-92/bash-3.2
+patch -p0 < ../../bash32-052
+patch -p0 < ../../bash32-053
+cd ../..
+```
 
 5.  Then, build it as above with xcodebuild from the bash-92 folder.
 
-    ``cd bash-92 && xcodebuild``
+```
+cd bash-92
+xcodebuild
+```
 
 7.  Finally, move it into place:
 
-    ``sudo mv build/Release/{bash,sh} /bin/``
+```
+sudo mv build/Release/{bash,sh} /bin/
+```
 
 Option 4: Wait for Apple to release an official software update.
 ----------------------------------------------------------------
