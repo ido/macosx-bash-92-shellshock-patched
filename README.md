@@ -13,7 +13,10 @@ For completeness, there is additional information about the vulnerability in [US
 I am waiting for the proposed patches for CVE-2014-7169 to pass review.  Those patches are 
 [Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).
 
+I am in the process of applying the patches here: http://seclists.org/oss-sec/2014/q3/734
+
 So far, all this does is apply the 3.2.52 patch to bash-92 from Apple.  I will update this repository when a fix for CVE-2014-7169 is released as well, pull requests are welcome.  Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
+
 
 Usage
 -----
