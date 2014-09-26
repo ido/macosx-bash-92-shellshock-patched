@@ -31,7 +31,8 @@ Do you trust me not to root your box?  If so:
 2. Once there, download the binaries (`bash` and `sh`) and the PGP signatures (`bash.asc` and `sh.asc`) in the release.
 3. Verify the PGP signatures with `gpg --verify bash.asc` and `gpg --verify sh.asc`
 4. Move the binaries into place with `sudo mv bash sh /bin/`
-5. Verify that it worked with `bash --version`.  You should see the following output:
+5. Set their permissions with `sudo chown root: /bin/{bash,sh}` and `sudo chmod 555 /bin/{bash,sh}`
+6. Verify that it worked with `bash --version`.  You should see the following output:
 ```
 GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)
 ```
@@ -46,6 +47,8 @@ You'll need Xcode for this.
   cd bash-92
   xcodebuild
   sudo mv build/Release/{bash,sh} /bin/
+  sudo chown root: /bin/{bash,sh}
+  sudo chmod 555 /bin/{bash,sh}
   bash --version
 ```
 You should see the following output:
@@ -98,6 +101,8 @@ xcodebuild
 
 ```
 sudo mv build/Release/{bash,sh} /bin/
+sudo chown root: /bin/{bash,sh}
+sudo chmod 555 /bin/{bash,sh}
 ```
 
 Option 4: Wait for Apple to release an official software update.
