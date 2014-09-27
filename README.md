@@ -12,6 +12,19 @@ There were two proposed patches to CVE-2014-7169: [Chet Ramey's patch](http://ww
 
 Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
 
+Disclaimer
+----------
+
+```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
 Usage
 -----
 
@@ -22,10 +35,10 @@ You have four options, in descending order of how much you trust me (and increas
 *   Option 3: Reproduce the work I have done in this repository from upstream sources.
 *   Option 4: Wait for Apple to release an official software update.
 
-Option 1: Use my PGP-signed binaries.
--------------------------------------
+Option 1: Use the installer package or my PGP-signed binaries.
+--------------------------------------------------------------
 
-Do you trust me not to root your box?  If so:
+Do you trust me not to root your box?  If so, you can just grab and double-click the `macosx-bash-92-shellshock-patched.pkg` file from the [releases](https://github.com/ido/macosx-bash-92-shellshock-patched/releases/) section of this repository, or if you prefer not to use the installer package:
 
 1. Go to https://github.com/ido/macosx-bash-92-shellshock-patched/releases/
 2. Once there, download the binaries (`bash` and `sh`) and the PGP signatures (`bash.asc` and `sh.asc`) in the release.
@@ -36,6 +49,8 @@ Do you trust me not to root your box?  If so:
 ```
 GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)
 ```
+
+(Note: the `package.sh` file was used to generate the installer `pkg`.)
 
 Option 2: Build the patched binaries from this repository.
 ----------------------------------------------------------
@@ -115,16 +130,3 @@ Contribute
 ----------
 
 Please feel free to submit pull requests.
-
-Disclaimer
-----------
-
-```
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-```
