@@ -8,7 +8,7 @@ For more information about the original shellshock vulnerability, see [CVE-2014-
 
 For completeness, there is additional information about the vulnerability in [US-CERT Alert TA14-268A](https://www.us-cert.gov/ncas/alerts/TA14-268A) and [CERT Vulnerability Note VU#252743](http://www.kb.cert.org/vuls/id/252743).
 
-There were two proposed patches to CVE-2014-7169: [Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).  Chet Ramey released bash 3.2.53 in a mailing list post [here](http://seclists.org/oss-sec/2014/q3/734), which was applied to this repository.
+There were two proposed patches to CVE-2014-7169: [Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).  Chet Ramey released bash 3.2.53 in a mailing list post [here](http://seclists.org/oss-sec/2014/q3/734), which was applied to this repository.  [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13) or one very similar to it will likely be released soon since it addresses [CVE-2014-6277](http://lcamtuf.blogspot.com/2014/09/bash-bug-apply-unofficial-patch-now.html) as well.  (Florian's patch does not apply cleanly to bash 3.2, so I will wait for the official release, probably bash the 3.2.54 patch...)
 
 Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
 
