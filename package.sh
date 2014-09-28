@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-set -e -u -x
+set -e -x
 
-if [[ -z "$1" -o -z "$2" ]]; then
+if [[ "x$1" == "x" || "x$2" == "x" ]]; then
     echo "Usage: $0 <identifier> <version>"
     exit 1
 fi
