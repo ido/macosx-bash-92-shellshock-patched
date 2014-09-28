@@ -1,14 +1,16 @@
 Shellshock hotfix for Mac OS X 10.9 Mavericks
 =============================================
 
-This is the Apple Mac OS X 10.9 Mavericks bash-92 with 3.2.52 and 3.2.53 patches applied (shellshock patches).
+This is the Apple Mac OS X 10.9 Mavericks bash-92 with 3.2.52, 3.2.53 and 3.2.54 patches applied (shellshock patches).
 This should work on most other versions of Mac OS X as well.
 
-For more information about the original shellshock vulnerability, see [CVE-2014-6271](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271) and the follow-up vulnerability described in [CVE-2014-7169](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169).  *This fixes both vulnerabilities.*
+For more information about the original shellshock vulnerability, see [CVE-2014-6271](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271), [CVE-2014-7169](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169) and the follow-up vulnerability described in [CVE-2014-6277](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6277). *This fixes all three vulnerabilities.*
 
 For completeness, there is additional information about the vulnerability in [US-CERT Alert TA14-268A](https://www.us-cert.gov/ncas/alerts/TA14-268A) and [CERT Vulnerability Note VU#252743](http://www.kb.cert.org/vuls/id/252743).
 
-There were two proposed patches to CVE-2014-7169: [Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).  Chet Ramey released bash 3.2.53 in a mailing list post [here](http://seclists.org/oss-sec/2014/q3/734), which was applied to this repository.  [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13) or one very similar to it will likely be released soon since it addresses [CVE-2014-6277](http://lcamtuf.blogspot.com/2014/09/bash-bug-apply-unofficial-patch-now.html) as well.  (Florian's patch does not apply cleanly to bash 3.2, so I will wait for the official release, probably bash the 3.2.54 patch...)
+[Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) addresses CVE-2014-7169. bash 3.2.53 was released in a mailing list post [here](http://seclists.org/oss-sec/2014/q3/734), and the patch was applied to this repository.
+
+[Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13) addresses [CVE-2014-6277](http://lcamtuf.blogspot.com/2014/09/bash-bug-apply-unofficial-patch-now.html). bash 3.2.54 was released (unofficially, I couldn't find a mailing list post) and the patch was applied to this repository.
 
 Hopefully Apple releases an official patch and this repository becomes irrelevant soon.
 
@@ -47,7 +49,7 @@ Do you trust me not to root your box?  If so, you can just grab and double-click
 5. Set their permissions with `sudo chown root: /bin/{bash,sh}` and `sudo chmod 555 /bin/{bash,sh}`
 6. Verify that it worked with `bash --version`.  You should see the following output:
 ```
-GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)
+GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)
 ```
 
 (Note: the `package.sh` file was used to generate the installer `pkg`.)
@@ -68,7 +70,7 @@ You'll need Xcode for this.
 ```
 You should see the following output:
 ```
-GNU bash, version 3.2.53(1)-release (x86_64-apple-darwin13)
+GNU bash, version 3.2.54(1)-release (x86_64-apple-darwin13)
 ```
 
 Option 3: Don't trust me, trust upstream instead.
@@ -88,12 +90,14 @@ If you want to do it yourself/not from this Git repository, you could wait for A
 
     http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-052
     http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-053
+	http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-054
     (or http://seclists.org/oss-sec/2014/q3/734 for bash32-053)
 
 3.  Then, verify the PGP signature with these files:
 
     http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-052.sig
     http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-053.sig
+    http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-054.sig
 
 4.  Then, apply the patch to the bash-3.2 folder in the tarball:
 
@@ -102,6 +106,7 @@ tar xvzf bash-92.tar.gz
 cd bash-92/bash-3.2
 patch -p0 < ../../bash32-052
 patch -p0 < ../../bash32-053
+patch -p0 < ../../bash32-054
 cd ../..
 ```
 
