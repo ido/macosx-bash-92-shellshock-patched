@@ -1,3 +1,5 @@
+**This repository is deprecated since Apple released an official hotfix***, referred to as the [OS X bash Update 1.0](http://support.apple.com/kb/DL1769), which updates bash to 3.2.53 (although not 3.2.54, a.k.a. Florian's patch).  That update does seem to apply portions of Florian's patch.  The [updated bash-92.1.2 code](http://opensource.apple.com/tarballs/bash/bash-92.1.2.tar.gz) is also available from Apple, and I've created a branch containing that source code
+
 Shellshock hotfix for Mac OS X 10.9 Mavericks
 =============================================
 
@@ -9,8 +11,6 @@ For more information about the original shellshock vulnerability, see [CVE-2014-
 For completeness, there is additional information about the vulnerability in [US-CERT Alert TA14-268A](https://www.us-cert.gov/ncas/alerts/TA14-268A) and [CERT Vulnerability Note VU#252743](http://www.kb.cert.org/vuls/id/252743).
 
 There were two proposed patches to CVE-2014-7169: [Chet Ramey's patch](http://www.openwall.com/lists/oss-security/2014/09/25/10) and [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13).  Chet Ramey released bash 3.2.53 in a mailing list post [here](http://seclists.org/oss-sec/2014/q3/734), which was applied to this repository.  [Florian Weimer's patch](http://www.openwall.com/lists/oss-security/2014/09/25/13) which addresses [CVE-2014-6277](http://lcamtuf.blogspot.com/2014/09/bash-bug-apply-unofficial-patch-now.html) as well was modified and released as the bash 3.2.54 patch, and is applied to this repository.
-
-Apple has (since I created this repository) released an official patch, referred to as the [OS X bash Update 1.0](http://support.apple.com/kb/DL1769).  This patch only updates bash to 3.2.53, not 3.2.54 (i.e. Florian's patch), but seems to apply portions of Florian's patch.  The [updated bash-92.1.2 code](http://opensource.apple.com/tarballs/bash/bash-92.1.2.tar.gz) is also available.  I've created a branch containing that source code, and will merge it in (and update to 3.2.54) as time permits.  (Pull requests welcome.)
 
 Disclaimer
 ----------
