@@ -1,5 +1,7 @@
 **This repository is deprecated since Apple released an official hotfix**, referred to as the [OS X bash Update 1.0](http://support.apple.com/kb/DL1769), which updates bash to 3.2.53 (although not 3.2.54, a.k.a. Florian's patch).  That update does seem to apply portions of Florian's patch.  The [updated bash-92.1.2 code](http://opensource.apple.com/tarballs/bash/bash-92.1.2.tar.gz) is also available from Apple, and I've created a branch containing that source code
 
+**Apparently 3.2.54 is not enough...3.2 is up to 3.2.57 now, so it's possible that additional patches are required and the Apple hotfix mentioned above may provide incomplete protection.**  I do not have time to update this repository at the moment, so pull requests are welcome for 3.2.55-57 patches.
+
 Shellshock hotfix for Mac OS X 10.9 Mavericks
 =============================================
 
